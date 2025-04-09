@@ -3,112 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Gallery</title>
+    <meta name="description" content="SoftLuxe - Your destination for beauty products tailored for every skin type.">
+    <title>SoftLuxe - Premium Beauty Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <div class="announcement-bar">Free shipping to Philippines on all orders above ₱5,000</div>
-        <hr class="divider">
-        <div class="header-container">
-            <nav class="header-left">
-                <a href="#">Shop</a>
-                <a href="#">New Arrivals</a>
-                <a href="#">About</a>
+<body class="bg-cream font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="announcement-bar bg-pink-100 text-gray-700 text-center py-2 text-sm">
+            Free shipping to Philippines on all orders above ₱5,000
+        </div>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <button id="menu-toggle" class="md:hidden material-icons text-pink-500 mr-4">menu</button>
+                <div class="logo text-2xl font-bold text-pink-500">SoftLuxe</div>
+            </div>
+            <nav id="nav-menu" class="hidden md:flex space-x-6">
+                <a href="#shop" class="nav-link text-gray-600 hover:text-pink-500 transition">Shop</a>
+                <a href="#new-arrivals" class="nav-link text-gray-600 hover:text-pink-500 transition">New Arrivals</a>
+                <a href="#reviews" class="nav-link text-gray-600 hover:text-pink-500 transition">Reviews</a>
+                <a href="#about" class="nav-link text-gray-600 hover:text-pink-500 transition">About</a>
             </nav>
-            <div class="logo">SoftLuxe</div>
-            <div class="header-right">
-                <input type="text" placeholder="Search ⌕" class="search-bar">
-                <i class="material-icons">person</i>
-                <i class="material-icons">favorite</i>
-                <i class="material-icons">shopping_cart</i>
+            <div class="flex items-center space-x-4">
+                <button id="search-toggle" class="material-icons text-pink-500">search</button>
+                <input type="text" id="search-bar" placeholder="Search products..." class="hidden px-3 py-1 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500">
+                <button id="account-btn" class="material-icons text-pink-500">person</button>
+                <button id="wishlist-btn" class="material-icons text-pink-500 relative">
+                    <span id="wishlist-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    favorite
+                </button>
+                <button id="cart-btn" class="material-icons text-pink-500 relative">
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    shopping_cart
+                </button>
             </div>
         </div>
     </header>
-<section class="hero-section">
-    <video autoplay muted loop id="background-video">
-        <source src="video/0122.mp4" type="video/mp4">
-    </video>
-    <div class="hero-content">
-        <h1>Your base for beauty, no matter the skin you're in</h1>
-        <p>Your one-stop destination for flawless beauty, made for every skin type</p>
-        <button class="shop-now">Shop Now</button>
-        <!-- Social Media Icons -->
-        <div class="hero-social-icons">
-            <a href="#" class="hero-social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="hero-social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="hero-social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="hero-social-icon"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-</section>
 
-
-    <!-- Gallery Stats Section -->
-    <div class="gallery-header">
-        <p class="gallery-stats">
-            <strong>119.95K+</strong> loved No Name Cosmetics &emsp;&emsp; 
-            <strong>103.2K+</strong> 5-star reviews &emsp;&emsp; 
-            <strong>355.46K+</strong> items sold
-        </p>
-        <hr class="gallery-divider">
-        <h3 class="shop-by-category">Shop by category</h3>
-    </div>
-    
-
-    <!-- Product Gallery Section -->
-    <section class="product-gallery">
-        <div class="product-card">
-            <img src="imgs/pc1.jpg" alt="Puffy Bag">
-            <h3>SilkGlow Foundation</h3>
-            <p>SilkGlow Foundation delivers buildable coverage and a radiant finish, perfect for all skin types.</p>
-            <button class="shop-now">Shop Now</button>
-        </div>
-        <div class="product-card">
-            <img src="imgs/pc2.jpg" alt="Elegant Watch">
-            <h3>SilkySmooth Concealer</h3>
-            <p>SilkySmooth Concealer brightens and conceals effortlessly for a flawless, natural look.</p>
-            <button class="shop-now">Shop Now</button>
-        </div>
-        <div class="product-card">
-            <img src="imgs/pc3.jpg" alt="Stylish Sneakers">
-            <h3>SoftFocus Powder</h3>
-            <p>SoftFocus Powder sets makeup, blurs imperfections, and controls shine for all-day perfection.</p>
-            <button class="shop-now">Shop Now</button>
+    <!-- Hero Section -->
+    <section class="hero-section relative min-h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+        <div class="relative z-20 px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Your Base for Beauty</h1>
+            <p class="text-lg md:text-2xl mb-6 animate-fade-in-delayed">Flawless beauty products for every skin type</p>
+            <button id="hero-shop-btn" class="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-400 transition duration-300 animate-fade-in-delayed">Shop Now</button>
+            <div class="mt-6 flex justify-center space-x-4 animate-fade-in-delayed">
+                <button class="social-btn text-white hover:text-pink-300 transition" data-platform="facebook"><i class="fab fa-facebook-f"></i></button>
+                <button class="social-btn text-white hover:text-pink-300 transition" data-platform="twitter"><i class="fab fa-twitter"></i></button>
+                <button class="social-btn text-white hover:text-pink-300 transition" data-platform="instagram"><i class="fab fa-instagram"></i></button>
+                <button class="social-btn text-white hover:text-pink-300 transition" data-platform="youtube"><i class="fab fa-youtube"></i></button>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Your destination for beauty, made for every skin type. SoftLuxe offers products tailored for everyone.</p>
+    <!-- Stats Section -->
+    <div class="bg-white py-12 text-center">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-8 text-gray-600">
+                <p><strong class="text-pink-500">119.95K+</strong> Loved SoftLuxe</p>
+                <p><strong class="text-pink-500">103.2K+</strong> 5-Star Reviews</p>
+                <p><strong class="text-pink-500">355.46K+</strong> Items Sold</p>
             </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: <a href="mailto:info@fictionalstore.com">info@fictionalstore.com</a></p>
-                <p>Phone: 123-456-7890</p>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-media-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <hr class="my-6 border-pink-300">
+            <h3 class="text-3xl font-semibold text-gray-700">Shop by Category</h3>
+        </div>
+    </div>
+
+    <!-- Product Gallery Section -->
+    <section id="shop" class="py-16 bg-cream">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="product-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1625772299848-391b6a8e7c21?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="SilkGlow Foundation" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-pink-500">SilkGlow Foundation</h3>
+                    <p class="text-gray-600 mb-4">Buildable coverage with a radiant finish for all skin types.</p>
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex justify-between space-x-2">
+                            <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-400 transition w-full" data-product="SilkGlow Foundation">Add to Cart</button>
+                            <button class="buy-now bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-400 transition w-full" data-product="SilkGlow Foundation">Buy Now</button>
+                        </div>
+                        <button class="add-to-wishlist material-icons text-pink-500 hover:text-pink-400 transition mx-auto" data-product="SilkGlow Foundation">favorite_border</button>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1625772301891-7d2e5c3b4a4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="SilkySmooth Concealer" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-pink-500">SilkySmooth Concealer</h3>
+                    <p class="text-gray-600 mb-4">Brightens and conceals for a flawless, natural look.</p>
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex justify-between space-x-2">
+                            <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-400 transition w-full" data-product="SilkySmooth Concealer">Add to Cart</button>
+                            <button class="buy-now bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-400 transition w-full" data-product="SilkySmooth Concealer">Buy Now</button>
+                        </div>
+                        <button class="add-to-wishlist material-icons text-pink-500 hover:text-pink-400 transition mx-auto" data-product="SilkySmooth Concealer">favorite_border</button>
+                    </div>
+                </div>
+                <div class="product-card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1625772299865-8e5b3a1a7673?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="SoftFocus Powder" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-pink-500">SoftFocus Powder</h3>
+                    <p class="text-gray-600 mb-4">Sets makeup and blurs imperfections for all-day perfection.</p>
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex justify-between space-x-2">
+                            <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-400 transition w-full" data-product="SoftFocus Powder">Add to Cart</button>
+                            <button class="buy-now bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-400 transition w-full" data-product="SoftFocus Powder">Buy Now</button>
+                        </div>
+                        <button class="add-to-wishlist material-icons text-pink-500 hover:text-pink-400 transition mx-auto" data-product="SoftFocus Powder">favorite_border</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="#">Terms & Conditions</a>
-                <span>|</span>
-                <a href="#">Privacy Policy</a>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-semibold text-gray-700 text-center mb-8">New Arrivals</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="product-card bg-cream rounded-lg shadow-lg p-6 hover:shadow-xl transition transform hover:-translate-y-1">
+                    <img src="https://images.unsplash.com/photo-1625772299865-8e5b3a1a7673?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Glow Serum" class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-semibold text-pink-500">Glow Serum</h3>
+                    <p class="text-gray-600 mb-4">Hydrates and adds a radiant glow to your skin.</p>
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex justify-between space-x-2">
+                            <button class="add-to-cart bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-400 transition w-full" data-product="Glow Serum">Add to Cart</button>
+                            <button class="buy-now bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-400 transition w-full" data-product="Glow Serum">Buy Now</button>
+                        </div>
+                        <button class="add-to-wishlist material-icons text-pink-500 hover:text-pink-400 transition mx-auto" data-product="Glow Serum">favorite_border</button>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2025 SoftLuxe. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-16 bg-cream">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-semibold text-gray-700 text-center mb-8">Customer Reviews</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="review-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <h4 class="text-lg font-semibold text-gray-800">Jericko</h4>
+                        <div class="ml-2 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Absolutely love the SilkGlow Foundation! It blends perfectly and gives my skin a radiant glow. Highly recommend!"</p>
+                </div>
+                <div class="review-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <h4 class="text-lg font-semibold text-gray-800">Dane</h4>
+                        <div class="ml-2 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="far fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The SilkySmooth Concealer is amazing for covering dark circles. It’s lightweight and lasts all day!"</p>
+                </div>
+                <div class="review-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <h4 class="text-lg font-semibold text-gray-800">Kurt</h4>
+                        <div class="ml-2 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"SoftFocus Powder is a game-changer! It keeps my makeup in place and controls shine perfectly."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-4">About Us</h3>
+                <p class="text-gray-300">SoftLuxe offers beauty products tailored for every skin type, ensuring everyone feels confident and radiant.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-4">Contact</h3>
+                <p class="text-gray-300">Email: <a href="mailto:info@softluxe.com" class="text-pink-300 hover:underline">info@softluxe.com</a></p>
+                <p class="text-gray-300">Phone: 123-456-7890</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <button class="social-btn text-pink-300 hover:text-pink-400 transition" data-platform="facebook"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social-btn text-pink-300 hover:text-pink-400 transition" data-platform="twitter"><i class="fab fa-twitter"></i></button>
+                    <button class="social-btn text-pink-300 hover:text-pink-400 transition" data-platform="instagram"><i class="fab fa-instagram"></i></button>
+                    <button class="social-btn text-pink-300 hover:text-pink-400 transition" data-platform="youtube"><i class="fab fa-youtube"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 text-center border-t border-gray-700 pt-4">
+            <div class="mb-2">
+                <button class="footer-btn text-pink-300 hover:underline" data-page="terms">Terms & Conditions</button> | 
+                <button class="footer-btn text-pink-300 hover:underline" data-page="privacy">Privacy Policy</button>
+            </div>
+            <p class="text-gray-400">© 2025 SoftLuxe. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold">Your Cart</h3>
+                <button id="close-cart" class="material-icons text-gray-600">close</button>
+            </div>
+            <div id="cart-items" class="mb-4"></div>
+            <button id="checkout-btn" class="bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-400 transition w-full">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Wishlist Modal -->
+    <div id="wishlist-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded-lg max-w-md w-full">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold">Your Wishlist</h3>
+                <button id="close-wishlist" class="material-icons text-gray-600">close</button>
+            </div>
+            <div id="wishlist-items" class="mb-4"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
