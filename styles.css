@@ -72,10 +72,4 @@ html {
 .product-card .flex-col {
     align-items: center;
 }
-.hero-section h1 {
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-.hero-section p {
-    font-weight: 300;
-}
+
