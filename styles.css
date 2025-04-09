@@ -13,6 +13,21 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-delayed {
+    animation: fadeIn 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
 /* Mobile navigation adjustments */
 @media (max-width: 768px) {
     #nav-menu {
@@ -35,4 +50,32 @@ html {
         padding: 0.5rem 0;
         text-align: center;
     }
+}
+
+/* Modal styles */
+#cart-modal, #wishlist-modal {
+    transition: opacity 0.3s ease;
+}
+
+#cart-items, #wishlist-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Review card hover effect */
+.review-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Product card button layout */
+.product-card .flex-col {
+    align-items: center;
+}
+.hero-section h1 {
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+.hero-section p {
+    font-weight: 300;
 }
