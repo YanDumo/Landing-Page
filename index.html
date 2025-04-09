@@ -24,7 +24,6 @@
             <nav id="nav-menu" class="hidden md:flex space-x-6">
                 <a href="#shop" class="nav-link text-gray-600 hover:text-pink-500 transition">Shop</a>
                 <a href="#new-arrivals" class="nav-link text-gray-600 hover:text-pink-500 transition">New Arrivals</a>
-                <a href="#reviews" class="nav-link text-gray-600 hover:text-pink-500 transition">Reviews</a>
                 <a href="#about" class="nav-link text-gray-600 hover:text-pink-500 transition">About</a>
             </nav>
             <div class="flex items-center space-x-4">
@@ -45,16 +44,13 @@
 
     <!-- Hero Section -->
     <section class="hero-section relative min-h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <video class="w-full h-full object-cover" autoplay muted loop>
-                <source src="https://github.com/YanDumo/Landing-Page/raw/master/video/0122.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('https://images.unsplash.com/photo-1512306093441-2e5a0e6e3812?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
         <div class="relative z-20 px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Your Base for Beauty</h1>
-            <p class="text-lg md:text-2xl mb-6 animate-fade-in-delayed">Flawless beauty products for every skin type</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+                Your base for beauty, <span class="text-yellow-400">no matter the skin you’re in</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-6 animate-fade-in-delayed">Your one-stop destination for flawless beauty, made for every skin</p>
             <button id="hero-shop-btn" class="bg-pink-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-pink-400 transition duration-300 animate-fade-in-delayed">Shop Now</button>
             <div class="mt-6 flex justify-center space-x-4 animate-fade-in-delayed">
                 <button class="social-btn text-white hover:text-pink-300 transition" data-platform="facebook"><i class="fab fa-facebook-f"></i></button>
@@ -245,6 +241,7 @@
         </div>
     </div>
 
+    <!-- Link to script.js -->
     <script src="script.js"></script>
 </body>
 </html>
