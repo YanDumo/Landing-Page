@@ -28,26 +28,6 @@ html {
     animation-fill-mode: both;
 }
 
-/* Hero section adjustments */
-.hero-section {
-    position: relative;
-    min-height: 60vh; /* Reduced from 90vh to 60vh to match the image */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-}
-
-.hero-section .bg-cover {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-}
-
 /* Mobile navigation adjustments */
 @media (max-width: 768px) {
     #nav-menu {
@@ -70,11 +50,6 @@ html {
         padding: 0.5rem 0;
         text-align: center;
     }
-
-    /* Adjust hero section height for smaller screens */
-    .hero-section {
-        min-height: 50vh; /* Slightly shorter on mobile for better proportionality */
-    }
 }
 
 /* Modal styles */
@@ -86,7 +61,11 @@ html {
     max-height: 300px;
     overflow-y: auto;
 }
-
+/* Hero section text adjustments */
+.hero-section h1 {
+    line-height: 10;
+    text-transform: uppercase;
+}
 /* Review card hover effect */
 .review-card:hover {
     transform: translateY(-5px);
@@ -96,14 +75,4 @@ html {
 /* Product card button layout */
 .product-card .flex-col {
     align-items: center;
-}
-
-/* Hero section text adjustments */
-.hero-section h1 {
-    line-height: 10;
-    text-transform: uppercase;
-}
-
-.hero-section p {
-    font-weight: 300;
 }
